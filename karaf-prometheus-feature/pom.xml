@@ -24,7 +24,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bobpaulin.karaf</groupId>
 	<artifactId>karaf-prometheus-feature</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.3.0</version>
 	<packaging>pom</packaging>
 	<build>
 		<resources>
@@ -84,4 +84,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<distributionManagement>
+		<repository>
+			<id>citc.opensource</id>
+			<name>CITC Open Source repo</name>
+			<url>https://maven1.citc.ru/content/repositories/citc-opensource</url>
+		</repository>
+		<snapshotRepository>
+			<id>citc.snapshots</id>
+			<name>CITC Main snapshots repo</name>
+			<url>https://maven1.citc.ru/content/repositories/citc-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>

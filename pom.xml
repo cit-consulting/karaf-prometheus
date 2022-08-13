@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
      <!--
 
         Licensed to the Apache Software Foundation (ASF) under one or more
@@ -20,14 +20,27 @@
         See the License for the specific language governing permissions and
         limitations under the License.
     -->
-    
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.bobpaulin.karaf</groupId>
   <artifactId>karaf-prometheus</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.3.0</version>
   <packaging>pom</packaging>
   <modules>
   	<module>karaf-prometheus-servlet</module>
   	<module>karaf-prometheus-feature</module>
   </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>citc.opensource</id>
+            <name>CITC Open Source repo</name>
+            <url>https://maven1.citc.ru/content/repositories/citc-opensource</url>
+        </repository>
+        <snapshotRepository>
+            <id>citc.snapshots</id>
+            <name>CITC Main snapshots repo</name>
+            <url>https://maven1.citc.ru/content/repositories/citc-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
