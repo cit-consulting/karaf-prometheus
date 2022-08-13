@@ -20,6 +20,10 @@ package com.bobpaulin.karaf.prometheus.impl.osgi;
 
 import java.util.Hashtable;
 
+import io.micrometer.core.instrument.binder.jvm.JvmHeapPressureMetrics;
+import io.micrometer.core.instrument.binder.system.DiskSpaceMetrics;
+import io.micrometer.core.instrument.binder.system.FileDescriptorMetrics;
+import io.micrometer.core.instrument.binder.system.UptimeMetrics;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
@@ -58,7 +62,10 @@ public class Activator implements BundleActivator {
         new JvmGcMetrics().bindTo(prometheusRegistry);
         new ProcessorMetrics().bindTo(prometheusRegistry);
         new JvmThreadMetrics().bindTo(prometheusRegistry);
-        
+        new JvmHeapPressureMetrics().bindTo(prometheusRegistry);
+        new FileDescriptorMetrics().bindTo(prometheusRegistry);
+        new UptimeMetrics().bindTo(prometheusRegistry);
+
         httpServiceTracker = new ServiceTracker(bundleContext, HttpService.class.getName(), null) {
             @Override
             public Object addingService(ServiceReference ref) {
